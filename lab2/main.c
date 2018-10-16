@@ -1,26 +1,96 @@
+/* ------------------------------------------------------ */
+/*                    Fochier main.c                      */
+/*   Test sur la génération des nombres pseudo-aléaoires  */
+/*          suivants differentes distributions            */
+/* ------------------------------------------------------ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 #include <math.h>
 
-int    randomAB(int a, int b);
+double    randomAB(int a, int b);
 double random01();
-void   distribution();
+void   distribution(int classe, int t[]);
 void   distribution_exp();
 
+/* -------------------------------------------------------------------- */
 
-int randomAB(int a, int b)
+int main()
 {
+    /* srand(time(NULL)) permet d'initialiser le générateur des nombres aléatoires */
+    srand(time(NULL));
 
-    return ( (rand()%(b-a) + 1 ) );
+    /*
+    int i;
+    for(i=0;i<100;i++)
+        printf("%f ", randomAB(2.,7.));
+    */
+
+    int i;
+    for(i=0;i<100;i++)
+        printf("%f ", random01());
+
+/*
+    distribution();
+    int    i, tabF[21] = { 0 };
+    double x, moy = 0.;
+
+    for (i = 0; i < 1000000; i++)
+    {
+        x = negExp(10.);
+        moy += x;
+
+        if (x < 20.)
+        {
+            //printf("x = %f\n", x);
+            //printf("(int) x = %d\n", (int) x);
+            //
+            ++tabF[(int) x];
+        }
+        else tabF[20]++;
+    }
+    moy = moy / (double) 1000000;
+
+    for (i = 0; i < 20 ; i++)
+    {
+        printf("Tab[%02d] = %d\n", i, tabF[i]);
+    }
+    printf("Tab[20] = %d\n", tabF[20]);
+    printf("Moyenne = %f\n", moy);
+*/
+    return 0;
 }
 
+/*  ---------------------------------------------------------- */
+/*  randomAB Génère un nombre aléatoire entre 2 nombres réels  */
+/*                                                             */
+/*  En entrée : a et b, Deux réels                             */
+/*  En sortie : un nombre réel générée compris a et b          */
+/*  ---------------------------------------------------------- */
+double randomAB(int a, int b)
+{
+    return (double)rand()/(RAND_MAX)*(b-a)+a;
+}
+
+/*  ---------------------------------------------------------- */
+/*  random01 Génère un nombre aléatoire entre 0 et 1           */
+/*                                                             */
+/*  En entrée : void                                           */
+/*  En sortie : un nombre réel générée compris 0 et 1          */
+/*  ---------------------------------------------------------- */
 double random01()
 {
     return (double)rand() / (double) RAND_MAX;
 }
 
-void distribution()
+/*  ---------------------------------------------------------- */
+/*  distribution Génère un nombre aléatoire entre 0 et 1           */
+/*                                                             */
+/*  En entrée : void                                           */
+/*  En sortie : un nombre réel générée compris 0 et 1          */
+/*  ---------------------------------------------------------- */
+void distribution(int classe, int t[])
 {
     int i, t[3]={0};
     float r;
@@ -53,42 +123,3 @@ double negExp(double inMoyenne)
 {
     return (log(1. - random01()) * inMoyenne * -1);
 }
-
-/* -------------------------------------------------------------------- */
-
-int main()
-{
-/*    srand(time(NULL));
-
-
-    distribution();
-  */
-    int    i, tabF[21] = { 0 };
-    double x, moy = 0.;
-
-    for (i = 0; i < 1000000; i++)
-    {
-        x = negExp(10.);
-        moy += x;
-
-        if (x < 20.)
-        {
-            /*printf("x = %f\n", x);
-            printf("(int) x = %d\n", (int) x);
-            */
-            ++tabF[(int) x];
-        }
-        else tabF[20]++;
-    }
-    moy = moy / (double) 1000000;
-
-    for (i = 0; i < 20 ; i++)
-    {
-        printf("Tab[%02d] = %d\n", i, tabF[i]);
-    }
-    printf("Tab[20] = %d\n", tabF[20]);
-    printf("Moyenne = %f\n", moy);
-
-    return 0;
-}
-
