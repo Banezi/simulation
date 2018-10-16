@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1538523114 source:c:\users\bane\desktop\tpsimu\bit\main.c
+	<stdio.h>
+	<stdlib.h>
+
