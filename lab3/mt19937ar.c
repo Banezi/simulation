@@ -51,6 +51,7 @@
 #define LOWER_MASK 0x7fffffffUL /* least significant r bits */
 
 #include <math.h> /* Pour l'utilisation de M_PI */
+#include <stdlib.h>
 
 static unsigned long mt[N]; /* the array for the state vector  */
 static int mti=N+1; /* mti==N+1 means mt[N] is not initialized */
@@ -200,10 +201,50 @@ double compute_n_Pi(int n, int ni) // n : nombre d'experience, ni:nombre d'itera
     pi /= n;
 }
 
-/* Intervalle de confiance */
-void confidence_interval(int n)
+/* Ecriture du tableau t(n-1),1-a/2 */
+void ecriture_tab(double t[], int taille)
 {
+    /*
+    int i;
+    for(i=0; i<taille; i++)
+    {
+        printf("%d : ", i+1);
+        scanf("%lf", &t[i]);
+        printf("\n");
+    }
+    */
 
+    t[0] = 12.706;  t[1] = 4.303;   t[2] = 3.182;   t[3] = 2.776;
+    t[4] = 2.571;   t[5] = 2.447;   t[6] = 2.365;   t[7] = 2.308;
+    t[8] = 2.262;   t[9] = 2.228;   t[10] = 2.201;  t[11] = 2.179;
+    t[12] = 2.160;  t[13] = 2.145;  t[14] = 2.131;  t[15] = 2.120;
+    t[16] = 2.110;  t[17] = 2.101;  t[18] = 2.093;  t[19] = 2.086;
+    t[20] = 2.080;  t[21] = 2.074;  t[22] = 2.069;  t[23] = 2.064;
+    t[24] = 2.060;  t[25] = 2.056;  t[26] = 2.052;  t[27] = 2.048;
+    t[28] = 2.045;  t[29] = 2.042;  t[39] = 2.021;  t[79] = 2.000;
+    t[119] = 1.980;
+    // infini : 1.960
+
+}
+/* Lecture du tableau */
+void lecture_tab(double t[], int taille)
+{
+    int i;
+    for(i=0; i<taille; i++)
+    {
+        printf("%d : %.3f\n", i+1, t[i]);
+    }
+}
+
+/* Intervalle de confiance */
+void confidence_interval(int n, int ni)
+{
+    double *t = NULL;
+    t = malloc(sizeof(double)*n);
+    ecriture_tab(t,n);
+    lecture_tab(t,n);
+
+    free (t);
 }
 
 /* These real versions are due to Isaku Wada, 2002/01/09 added */
@@ -227,7 +268,7 @@ int main(void)
     }
     */
     //computePi(1000);
-    printf("La valeur moyenne de Pi avec 10 expérience est : Pi = %f\n", compute_n_Pi(10,1000000));
-
+    //printf("La valeur moyenne de Pi avec 10 expérience est : Pi = %f\n", compute_n_Pi(10,1000000));
+    confidence_interval(10,1000);
     return 0;
 }
