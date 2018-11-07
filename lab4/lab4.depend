@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1541580286 source:/home/LOCAL.ISIMA.FR/mabane/Bureau/simulation/lab4/main.cpp
+	<iostream>
+	"Lapin.h"
+	<ctime>
+	<cstdlib>
+
+1541580314 /home/LOCAL.ISIMA.FR/mabane/Bureau/simulation/lab4/Lapin.h
+
+1541580419 source:/home/LOCAL.ISIMA.FR/mabane/Bureau/simulation/lab4/Lapin.cpp
+	"Lapin.h"
+	<ctime>
+	<cstdlib>
+

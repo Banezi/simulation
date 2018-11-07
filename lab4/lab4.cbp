@@ -32,6 +32,10 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Lapin.cpp" />
+		<Unit filename="Lapin.h" />
+		<Unit filename="Lapine.cpp" />
+		<Unit filename="Lapine.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />
