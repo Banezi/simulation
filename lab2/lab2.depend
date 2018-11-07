@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1539720327 source:c:\users\bane\desktop\github\simulation\lab2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<math.h>
+

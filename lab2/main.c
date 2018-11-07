@@ -11,7 +11,7 @@
 
 double    randomAB(int a, int b);
 double random01();
-void   distribution(int classe, int t[]);
+void   distribution();
 void   distribution_exp();
 
 /* -------------------------------------------------------------------- */
@@ -85,12 +85,12 @@ double random01()
 }
 
 /*  ---------------------------------------------------------- */
-/*  distribution Génère un nombre aléatoire entre 0 et 1           */
+/*  distribution Réproduction de distribution discrète         */
 /*                                                             */
 /*  En entrée : void                                           */
-/*  En sortie : un nombre réel générée compris 0 et 1          */
+/*  En sortie : void                                           */
 /*  ---------------------------------------------------------- */
-void distribution(int classe, int t[])
+void distribution()
 {
     int i, t[3]={0};
     float r;
