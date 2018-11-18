@@ -282,23 +282,35 @@ int fib(int n)
     else
         return fib(n-1)+fib(n-2);
 }
+typedef struct Lapin Lapin;
+struct Lapin
+{
+    char type;
+};
 void rabbit_population_growth(int n)
 {
-    int i,j, paire;
-    for(i=1; i<=n; i++)
+    int i,j, paire, nbLapins=0, nbLapinsTotal, fils;
+    nbLapinsTotal = fib(n);
+    Lapin* listeLapins = malloc(nbLapinsTotal*sizeof(Lapin));
+    for(i=0; i<n; i++)
     {
         paire = fib(i);
-        if(i==2)
+        fils = paire-nbLapins;
+        for(j=nbLapins; j<nbLapins+fils; j++)
+            listeLapins[j].type='l';
+        for(j=0;j<nbLapins+fils;j++)
         {
-            printf("L+L\t");
-        }
-        else
-            printf("l+l\t");
-        for(j=2;j<=paire;j++)
-        {
-            printf("L+L\t");
+            printf("%c+%c\t",listeLapins[j].type, listeLapins[j].type);
         }
         printf("\n---------------------------------------------\n");
+        for(j=nbLapins;j<nbLapins+fils;j++)
+        {
+            if(listeLapins[j].type=='l')
+                listeLapins[j].type='L';
+        }
+
+        nbLapins+=fils;
+
     }
 }
 

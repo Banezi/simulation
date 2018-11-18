@@ -12,3 +12,29 @@
 	<ctime>
 	<cstdlib>
 
+1542502312 source:c:\users\bane\desktop\github\simulation\lab4\lapin.cpp
+	"Lapin.h"
+	<ctime>
+	<cstdlib>
+	<cctype>
+
+1542501797 c:\users\bane\desktop\github\simulation\lab4\lapin.h
+
+1542503019 source:c:\users\bane\desktop\github\simulation\lab4\main.cpp
+	<iostream>
+	"Lapin.h"
+	"Lapine.h"
+	<ctime>
+	<cstdlib>
+	<cstdio>
+	<vector>
+	<windows.h>
+
+1542502525 source:c:\users\bane\desktop\github\simulation\lab4\lapine.cpp
+	"Lapine.h"
+	<ctime>
+	<cstdlib>
+
+1542501809 c:\users\bane\desktop\github\simulation\lab4\lapine.h
+	"Lapin.h"
+
