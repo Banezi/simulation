@@ -48,7 +48,23 @@ int main()
             }
         }
 
+        //Evaluation decès
+        int nb_deces=0, n=listeLapins.size();
+        for(int i=1; i<n; i++)
+        {
+            listeLapins[i]->deces();
+            if(listeLapins[i]->get_en_vie()==false)
+            {
+                nb_deces++;
+                //delete listeLapins[i];
+                //listeLapins.erase(listeLapins.begin()+i);
+            }
+        }
+
+
+
         //Affichage
+        cout << "Mois : " << mois << "\tNombre lapins : " << Lapin::nbLapins << endl;
         for(int i=0; i<listeLapins.size(); i++)
         {
             listeLapins[i]->estMature();
@@ -57,6 +73,7 @@ int main()
         Sleep(1000);
         if(mois<12*annee_simu-1)
             system("cls");
+
 
     }
 

@@ -12,15 +12,15 @@
 	<ctime>
 	<cstdlib>
 
-1542502312 source:c:\users\bane\desktop\github\simulation\lab4\lapin.cpp
+1542786294 source:c:\users\bane\desktop\github\simulation\lab4\lapin.cpp
 	"Lapin.h"
 	<ctime>
 	<cstdlib>
 	<cctype>
 
-1542501797 c:\users\bane\desktop\github\simulation\lab4\lapin.h
+1542744340 c:\users\bane\desktop\github\simulation\lab4\lapin.h
 
-1542503019 source:c:\users\bane\desktop\github\simulation\lab4\main.cpp
+1542788477 source:c:\users\bane\desktop\github\simulation\lab4\main.cpp
 	<iostream>
 	"Lapin.h"
 	"Lapine.h"

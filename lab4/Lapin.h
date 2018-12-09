@@ -17,6 +17,7 @@ class Lapin
         char get_sexe(); void set_sexe();
         int get_ageMaturite();
         bool estMature();
+        void deces();
         static int nbLapins;
 };
 

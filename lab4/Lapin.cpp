@@ -67,3 +67,13 @@ bool Lapin::estMature()
         sexe = toupper(sexe);
     return mature;
 }
+/* ------------------------------------------------------------------------------- */
+/*  deces : Méthode d'évaluation de deces d'un lapin                               */
+/* ------------------------------------------------------------------------------- */
+void Lapin::deces()
+{
+    int mortMature = rand()%2 + 1;
+    int mortBebe = rand()%10 + 1;
+    if(age>=5*12 || (estMature() && mortMature==1) || (!estMature() && (mortBebe==1 || mortBebe==2)))
+        en_vie = false;
+}
